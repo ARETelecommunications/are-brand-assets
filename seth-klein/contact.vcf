@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Klein;Seth;;;
+FN:Seth Klein
+ORG:ARE Telecommunications LLC
+TITLE:Director of Operations
+TEL;TYPE=CELL,VOICE:+14237151447
+EMAIL;TYPE=WORK,INTERNET:sethklein@aretelecomllc.com
+ADR;TYPE=WORK:;;1223 Coronet Drive, Suite 1;Dalton;GA;30720;USA
+URL;TYPE=WORK:https://www.aretelecomllc.com
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/
+X-SOCIALPROFILE;TYPE=facebook:https://www.facebook.com/
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/
+URL:https://aretelecommunications.github.io/are-brand-assets/seth-klein/
+NOTE:ARE Telecommunications LLC & ARE Contracting LLC
+END:VCARD
