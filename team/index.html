@@ -46,12 +46,24 @@ h1{margin:0;font:700 32px/1.1 var(--display);color:var(--navy);letter-spacing:.0
 .soc:active{transform:scale(.95)}
 .more{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 24px 0;padding:14px;border-radius:12px;border:2px solid var(--navy);color:var(--navy);text-decoration:none;font:700 15px var(--display);letter-spacing:.08em;text-transform:uppercase}
 .more svg{width:22px;height:22px;fill:var(--blue)}
-.qr{margin:24px 24px 26px;padding:20px;border:1px solid var(--line);border-radius:14px;text-align:center}
+.qr{margin:24px 24px 0;padding:20px;border:1px solid var(--line);border-radius:14px;text-align:center}
 .qr img{width:180px;max-width:100%;height:auto;display:block;margin:0 auto}
 .qr p{margin:10px 0 0;color:var(--muted);font-size:14px}
 .share{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px auto 0;padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:700 13px var(--display);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 .share svg{width:16px;height:16px;fill:var(--blue)}
 .msg{min-height:20px;margin-top:6px;font-size:13px;color:var(--blue)}
+.home{margin:22px 24px 26px;text-align:center}
+.home h2{margin:0;font:700 15px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.home > p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.os{display:flex;justify-content:center;gap:12px;margin-top:12px}
+.os button{display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:700 14px var(--display);letter-spacing:.06em;cursor:pointer}
+.os button svg{height:18px;width:auto;fill:var(--navy)}
+.os button[aria-expanded="true"]{border-color:var(--navy);background:var(--navy);color:#fff}
+.os button[aria-expanded="true"] svg{fill:#fff}
+.steps{margin:14px 0 0;padding:16px 18px 16px 40px;border-radius:12px;background:var(--surface);text-align:left;font-size:15px}
+.steps li{margin:6px 0}
+.steps svg{display:inline-block;width:17px;height:17px;vertical-align:-3px;fill:var(--blue)}
+.steps .note{list-style:none;margin:10px 0 0 -22px;color:var(--muted);font-size:13px}
 footer{margin-top:auto;padding:22px 24px calc(26px + env(safe-area-inset-bottom,0px));background:var(--navy);color:var(--silver);text-align:center;font:700 11px/1.7 var(--display);letter-spacing:.14em}
 footer b{display:block;color:var(--bright);font-weight:400;letter-spacing:.32em;margin-top:6px}
 a:focus-visible,button:focus-visible{outline:3px solid var(--bright);outline-offset:2px}

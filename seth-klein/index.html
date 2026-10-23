@@ -46,12 +46,24 @@ h1{margin:0;font:700 32px/1.1 var(--display);color:var(--navy);letter-spacing:.0
 .soc:active{transform:scale(.95)}
 .more{display:flex;align-items:center;justify-content:center;gap:10px;margin:22px 24px 0;padding:14px;border-radius:12px;border:2px solid var(--navy);color:var(--navy);text-decoration:none;font:700 15px var(--display);letter-spacing:.08em;text-transform:uppercase}
 .more svg{width:22px;height:22px;fill:var(--blue)}
-.qr{margin:24px 24px 26px;padding:20px;border:1px solid var(--line);border-radius:14px;text-align:center}
+.qr{margin:24px 24px 0;padding:20px;border:1px solid var(--line);border-radius:14px;text-align:center}
 .qr img{width:180px;max-width:100%;height:auto;display:block;margin:0 auto}
 .qr p{margin:10px 0 0;color:var(--muted);font-size:14px}
 .share{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px auto 0;padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:700 13px var(--display);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 .share svg{width:16px;height:16px;fill:var(--blue)}
 .msg{min-height:20px;margin-top:6px;font-size:13px;color:var(--blue)}
+.home{margin:22px 24px 26px;text-align:center}
+.home h2{margin:0;font:700 15px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.home > p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.os{display:flex;justify-content:center;gap:12px;margin-top:12px}
+.os button{display:flex;align-items:center;gap:8px;padding:10px 18px;border:2px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:700 14px var(--display);letter-spacing:.06em;cursor:pointer}
+.os button svg{height:18px;width:auto;fill:var(--navy)}
+.os button[aria-expanded="true"]{border-color:var(--navy);background:var(--navy);color:#fff}
+.os button[aria-expanded="true"] svg{fill:#fff}
+.steps{margin:14px 0 0;padding:16px 18px 16px 40px;border-radius:12px;background:var(--surface);text-align:left;font-size:15px}
+.steps li{margin:6px 0}
+.steps svg{display:inline-block;width:17px;height:17px;vertical-align:-3px;fill:var(--blue)}
+.steps .note{list-style:none;margin:10px 0 0 -22px;color:var(--muted);font-size:13px}
 footer{margin-top:auto;padding:22px 24px calc(26px + env(safe-area-inset-bottom,0px));background:var(--navy);color:var(--silver);text-align:center;font:700 11px/1.7 var(--display);letter-spacing:.14em}
 footer b{display:block;color:var(--bright);font-weight:400;letter-spacing:.32em;margin-top:6px}
 a:focus-visible,button:focus-visible{outline:3px solid var(--bright);outline-offset:2px}
@@ -89,9 +101,43 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--bright);outline-off
     <div class="msg" id="msg" aria-live="polite"></div>
   </section>
 
+  <section class="home" aria-labelledby="home-h">
+    <h2 id="home-h">Add this card to your home screen</h2>
+    <p>Pick your phone for the steps.</p>
+    <div class="os">
+      <button type="button" id="btn-ios" aria-expanded="false" aria-controls="steps-ios"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>iPhone</button>
+      <button type="button" id="btn-android" aria-expanded="false" aria-controls="steps-android"><svg viewBox="0 0 576 512" aria-hidden="true"><path d="M420.55,301.93a24,24,0,1,1,24-24,24,24,0,0,1-24,24m-265.1,0a24,24,0,1,1,24-24,24,24,0,0,1-24,24m273.7-144.48,47.94-83a10,10,0,1,0-17.27-10h0l-48.54,84.07a301.25,301.25,0,0,0-246.56,0L116.18,64.45a10,10,0,1,0-17.27,10h0l47.94,83C64.53,202.22,8.24,285.55,0,384H576c-8.24-98.45-64.54-181.78-146.85-226.55"/></svg>Android</button>
+    </div>
+    <ol class="steps" id="steps-ios" hidden>
+      <li>Open this card in <b>Safari</b>.</li>
+      <li>Tap the <b>Share</b> button <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l4 4-1.4 1.4L13 5.8V15h-2V5.8L9.4 7.4 8 6zM5 10h3v2H6v8h12v-8h-2v-2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1z"/></svg>. On newer iPhones, tap the <b>three dots (&bull;&bull;&bull;)</b> first, then <b>Share</b>.</li>
+      <li>Scroll down and tap <b>Add to Home Screen</b>.</li>
+      <li>Tap <b>Add</b> in the top right corner.</li>
+      <li class="note">The ARE icon will appear on your home screen as "ARE Card".</li>
+    </ol>
+    <ol class="steps" id="steps-android" hidden>
+      <li>Open this card in <b>Chrome</b>.</li>
+      <li>Tap the <b>three dots</b> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg> in the top right corner.</li>
+      <li>Tap <b>Add to Home screen</b>.</li>
+      <li>Tap <b>Add</b>, then <b>Add</b> again if asked.</li>
+      <li class="note">The ARE icon will appear on your home screen.</li>
+    </ol>
+  </section>
+
   <footer>ARE TELECOMMUNICATIONS LLC<br>ARE CONTRACTING LLC<b>CONNECTING AMERICA.</b><b>BUILDING LEGACY.</b></footer>
 </main>
 <script>
+const osBtns = [["btn-ios", "steps-ios"], ["btn-android", "steps-android"]];
+osBtns.forEach(([b, s]) => document.getElementById(b).addEventListener("click", () => {
+  osBtns.forEach(([b2, s2]) => {
+    const open = b2 === b && document.getElementById(s2).hidden;
+    document.getElementById(s2).hidden = !open;
+    document.getElementById(b2).setAttribute("aria-expanded", open);
+  });
+}));
+if (/iPhone|iPad/.test(navigator.userAgent)) document.getElementById("btn-ios").click();
+else if (/Android/.test(navigator.userAgent)) document.getElementById("btn-android").click();
+if (window.matchMedia("(display-mode: standalone)").matches || navigator.standalone) document.querySelector(".home").hidden = true;
 document.getElementById("share").addEventListener("click", async () => {
   const url = "https://aretelecommunications.github.io/are-brand-assets/seth-klein/", msg = document.getElementById("msg");
   if (navigator.share) {
